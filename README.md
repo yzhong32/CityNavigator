@@ -8,7 +8,7 @@ The code for CS427 Android app.
 | Name          | NetID         | GitHub ID   | Role          | Experience             |
 | ------------- | ------------- | ------------| ------------- | ---------------------- |
 |Kyle Brogdon   | Brogdon3      | KyleBrogdon |               | Python, C#, JS, Flutter|            
-|               |               |             |               |                        |
+|Yiming Li      | yl159         | yl159-Yiming|               | Python, php            |
 |               |               |             |               |                        |
 |               |               |             |               |                        |
 |               |               |             |               |                        |

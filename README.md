@@ -3,14 +3,14 @@ The code for CS427 Android app.
 <br/>
 <br/>
 
-<b>Team # member information</b>
+<b>Team 1 member information</b>
 <br/>
 | Name          | NetID         | GitHub ID   | Role          | Experience             |
 | ------------- | ------------- | ------------| ------------- | ---------------------- |
 |Kyle Brogdon   | Brogdon3      | KyleBrogdon |               | Python, C#, JS, Flutter|            
 |Yiming Li      | yl159         | yl159-Yiming|               | Python, php            |
 |Brian Betancourt | brianib2    |  fullstacc |               |  Python, JS, Java  |
-|               |               |             |               |                        |
+|Yifan Zhong    | yzhong32      | yzhong32     |               | Python, Java, Go      |
 |               |               |             |               |                        |
 |               |               |             |               |                        |
 |               |               |             |               |                        |

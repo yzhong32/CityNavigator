@@ -9,9 +9,9 @@ The code for CS427 Android app.
 | ------------- | ------------- | ------------| ------------- | ---------------------- |
 |Kyle Brogdon   | Brogdon3      | KyleBrogdon |               | Python, C#, JS, Flutter|            
 |Yiming Li      | yl159         | yl159-Yiming|               | Python, php            |
-|Brian Betancourt | brianib2    |  fullstacc |               |  Python, JS, Java  |
-|Yifan Zhong    | yzhong32      | yzhong32     |               | Python, Java, Go      |
-|               |               |             |               |                        |
+|Brian Betancourt | brianib2    |  fullstacc  |               |  Python, JS, Java      |
+|Yifan Zhong    | yzhong32      | yzhong32    |               | Python, Java, Go       |
+|Smit Trailokya |Smit Trailokya |SmitTrailokya|               | Python, Go             |
 |               |               |             |               |                        |
 |               |               |             |               |                        |
 |               |               |             |               |                        |

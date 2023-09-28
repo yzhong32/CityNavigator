@@ -12,7 +12,7 @@ The code for CS427 Android app.
 |Brian Betancourt | brianib2    |  fullstacc  |               |  Python, JS, Java      |
 |Yifan Zhong    | yzhong32      | yzhong32    |               | Python, Java, Go       |
 |Smit Trailokya |srt6           |SmitTrailokya|               | Python, Go             |
-|               |               |             |               |                        |
+|Hend Abdelfattah| hend         | hendhany    |               | Python                 |
 |               |               |             |               |                        |
 |               |               |             |               |                        |
 <br/>

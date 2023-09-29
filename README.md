@@ -5,30 +5,30 @@ The code for CS427 Android app.
 
 <b>Team 1 member information</b>
 <br/>
-| Name           | NetID         | GitHub ID   | Role          | Experience             |
-| -------------  | ------------- | ------------| ------------- | ---------------------- |
-|Kyle Brogdon    | Brogdon3      | KyleBrogdon |  Manager      | Python, C#, JS, Flutter|            
-|Yiming Li       | yl159         | yl159-Yiming|  Developer    | Python, php            |
-|Brian Betancourt| brianib2      | fullstacc   |               | Python, JS, Java      |
-|Yifan Zhong     | yzhong32      | yzhong32    |  Developer    | Python, Java, Go       |
-|Smit Trailokya  | srt6          |SmitTrailokya|               | Python, Go             |
-|Hend Abdelfattah| hend          | hendhany    |  Developer    | Python                 |
-|                |               |             |               |                        |
-|                |               |             |               |                        |
+| Name           | NetID         | GitHub ID     | Role          | Experience             |
+| -------------  | ------------- | ------------  | ------------- | ---------------------- |
+|Kyle Brogdon    | Brogdon3      | KyleBrogdon   |  Manager      | Python, C#, JS, Flutter|            
+|Yiming Li       | yl159         | yl159-Yiming  |  Developer    | Python, php            |
+|Brian Betancourt| brianib2      | fullstacc     |  Tech Lead    | Python, JS, Java       |
+|Yifan Zhong     | yzhong32      | yzhong32      |  Developer    | Python, Java, Go       |
+|Smit Trailokya  | srt6          | SmitTrailokya |  Developer    | Python, Go             |
+|Hend Abdelfattah| hend          | hendhany      |  Developer    | Python                 |
+|Sergio Becerra  | sbecerr2      | sab2232       |  Developer    | Python                 |
+|                |               |               |               |                        |
 <br/>
 
 
 <b>Weekly Progress Reports</b>
 </br> 
 </br>
-Meeting time: Thursdays at 5:00PM CST
+Meeting time: Varies week to week.   
 </br> 
-Meeting location (zoom link): UIUC Slack Huddle in channel: cs427-2023f-team1
+Meeting location (Slack Huddle): UIUC Official Slack channel: cs427-2023f-team1
 </br> 
 </br>
 <b>Week 1</b>
 </br>
-Members present: Brogdon3, yl159, yzhong32, hend
+Members present: Brogdon3, yl159, yzhong32, hend, srt6, brianib2, sbecerr2
 </br>
 Meeting notes: Discussed responsibilities, weekly meeting time moving forward and deadline for assignment 1. 
 </br>
@@ -37,10 +37,10 @@ Meeting notes: Discussed responsibilities, weekly meeting time moving forward an
 | Brogdon3       | N/A                             |  Screenshots by 12PM CST on 01OCT, submit week 1 PDF |
 | yl159          | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
 | yzhong32       | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
-| hend           |                                 |  Screenshots by 12PM CST on 01OCT                    |
-|                |                                 |                                                      |
-|                |                                 |                                                      |
-|                |                                 |                                                      |
+| hend           | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
+| brianib2       | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
+| srt6           | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
+| sbecerr2       | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
 |                |                                 |                                                      |
 </br>
 

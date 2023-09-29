@@ -5,43 +5,43 @@ The code for CS427 Android app.
 
 <b>Team 1 member information</b>
 <br/>
-| Name          | NetID         | GitHub ID   | Role          | Experience             |
-| ------------- | ------------- | ------------| ------------- | ---------------------- |
-|Kyle Brogdon   | Brogdon3      | KyleBrogdon |               | Python, C#, JS, Flutter|            
-|Yiming Li      | yl159         | yl159-Yiming|               | Python, php            |
-|Brian Betancourt | brianib2    |  fullstacc  |               |  Python, JS, Java      |
-|Yifan Zhong    | yzhong32      | yzhong32    |               | Python, Java, Go       |
-|Smit Trailokya |srt6           |SmitTrailokya|               | Python, Go             |
-|Hend Abdelfattah| hend         | hendhany    |               | Python                 |
-|               |               |             |               |                        |
-|               |               |             |               |                        |
+| Name           | NetID         | GitHub ID   | Role          | Experience             |
+| -------------  | ------------- | ------------| ------------- | ---------------------- |
+|Kyle Brogdon    | Brogdon3      | KyleBrogdon |  Manager      | Python, C#, JS, Flutter|            
+|Yiming Li       | yl159         | yl159-Yiming|  Developer    | Python, php            |
+|Brian Betancourt| brianib2      | fullstacc   |               | Python, JS, Java      |
+|Yifan Zhong     | yzhong32      | yzhong32    |  Developer    | Python, Java, Go       |
+|Smit Trailokya  | srt6          |SmitTrailokya|               | Python, Go             |
+|Hend Abdelfattah| hend          | hendhany    |  Developer    | Python                 |
+|                |               |             |               |                        |
+|                |               |             |               |                        |
 <br/>
 
 
 <b>Weekly Progress Reports</b>
 </br> 
 </br>
-Meeting time: 
+Meeting time: Thursdays at 5:00PM CST
 </br> 
-Meeting location (zoom link):
+Meeting location (zoom link): UIUC Slack Huddle in channel: cs427-2023f-team1
 </br> 
 </br>
 <b>Week 1</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: Brogdon3, yl159, yzhong32, hend
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: Discussed responsibilities, weekly meeting time moving forward and deadline for assignment 1. 
 </br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| NetID          | Progress from last week         | Tasks for next week                                  |
+| ---------------| --------------------------------| -----------------------------------------------------|
+| Brogdon3       | N/A                             |  Screenshots by 12PM CST on 01OCT, submit week 1 PDF |
+| yl159          | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
+| yzhong32       | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
+| hend           |                                 |  Screenshots by 12PM CST on 01OCT                    |
+|                |                                 |                                                      |
+|                |                                 |                                                      |
+|                |                                 |                                                      |
+|                |                                 |                                                      |
 </br>
 
 

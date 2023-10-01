@@ -14,21 +14,21 @@ The code for CS427 Android app.
 |Smit Trailokya  | srt6          | SmitTrailokya |  Developer    | Python, Go             |
 |Hend Abdelfattah| hend          | hendhany      |  Developer    | Python                 |
 |Sergio Becerra  | sbecerr2      | sab2232       |  Developer    | Python                 |
-|                |               |               |               |                        |
+|Ashish Pabba    | apabba2       | apabba2       |  Developer    | Python, JS, Java       |
 <br/>
 
 
 <b>Weekly Progress Reports</b>
 </br> 
 </br>
-Meeting time: Varies week to week.   
+Meeting time: Varies week to week, decided by team each week.   
 </br> 
 Meeting location (Slack Huddle): UIUC Official Slack channel: cs427-2023f-team1
 </br> 
 </br>
 <b>Week 1</b>
 </br>
-Members present: Brogdon3, yl159, yzhong32, hend, srt6, brianib2, sbecerr2
+Members present: Brogdon3, yl159, yzhong32, hend, srt6, brianib2, sbecerr2, apabba2
 </br>
 Meeting notes: Discussed responsibilities, weekly meeting time moving forward and deadline for assignment 1. 
 </br>
@@ -41,7 +41,7 @@ Meeting notes: Discussed responsibilities, weekly meeting time moving forward an
 | brianib2       | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
 | srt6           | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
 | sbecerr2       | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
-|                |                                 |                                                      |
+| apabba2        | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
 </br>
 
 

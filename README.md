@@ -7,9 +7,9 @@ The code for CS427 Android app.
 <br/>
 | Name           | NetID         | GitHub ID     | Role          | Experience             |
 | -------------  | ------------- | ------------  | ------------- | ---------------------- |
-|Kyle Brogdon    | Brogdon3      | KyleBrogdon   |  Manager      | Python, C#, JS, Flutter|            
+|Kyle Brogdon    | Brogdon3      | KyleBrogdon   |  Manager      | Python, C#, JS, Flutter|
+|Brian Betancourt| brianib2      | fullstacc     |  Tech Lead    | Python, JS, Java       |            
 |Yiming Li       | yl159         | yl159-Yiming  |  Developer    | Python, php            |
-|Brian Betancourt| brianib2      | fullstacc     |  Tech Lead    | Python, JS, Java       |
 |Yifan Zhong     | yzhong32      | yzhong32      |  Developer    | Python, Java, Go       |
 |Smit Trailokya  | srt6          | SmitTrailokya |  Developer    | Python, Go             |
 |Hend Abdelfattah| hend          | hendhany      |  Developer    | Python                 |

@@ -23,7 +23,7 @@ The code for CS427 Android app.
 </br>
 Meeting time: Varies week to week, decided by team each week.   
 </br> 
-Meeting location (Slack Huddle): UIUC Official Slack channel: cs427-2023f-team1
+Meeting location (Slack Huddle): UIUC Official Slack(https://join.slack.com/t/uiuc-mcsds/shared_invite/zt-3szl5o1u-MOPJD9RDJCfmhFTMcEllFg) channel: cs427-2023f-team1
 </br> 
 </br>
 <b>Week 1</b>

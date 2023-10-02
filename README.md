@@ -30,18 +30,18 @@ Meeting location (Slack Huddle): UIUC Official Slack(https://join.slack.com/t/ui
 </br>
 Members present: Brogdon3, yl159, yzhong32, hend, srt6, brianib2, sbecerr2, apabba2
 </br>
-Meeting notes: Discussed responsibilities, weekly meeting time moving forward and deadline for assignment 1. 
+Meeting notes: Discussed responsibilities, weekly meeting time, assignment 1 deadline, and assigned all members to read milestone 2 instructions and formulating plan of attack. Will discuss specific responsibilites in more detail leading up to weekly meeting. 
 </br>
-| NetID          | Progress from last week         | Tasks for next week                                  |
-| ---------------| --------------------------------| -----------------------------------------------------|
-| Brogdon3       | N/A                             |  Screenshots by 12PM CST on 01OCT, submit week 1 PDF |
-| yl159          | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
-| yzhong32       | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
-| hend           | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
-| brianib2       | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
-| srt6           | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
-| sbecerr2       | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
-| apabba2        | N/A                             |  Screenshots by 12PM CST on 01OCT                    |
+| NetID          | Progress from last week         | Tasks for next week                                     |
+| ---------------| --------------------------------| --------------------------------------------------------|
+| Brogdon3       | Milestone 1, environment setup  |  Begin milestone 2 work, submit week 1 PDF              |
+| yl159          | Milestone 1, environment setup  |  Begin milestone 2 work                                 |
+| yzhong32       | Milestone 1, environment setup  |  Begin milestone 2 work                                 |
+| hend           | Milestone 1, environment setup  |  Begin milestone 2 work                                 |
+| brianib2       | Milestone 1, environment setup  |  Begin milestone 2 work                                 |
+| srt6           | Milestone 1, environment setup  |  Begin milestone 2 work                                 |
+| sbecerr2       | Milestone 1, environment setup  |  Begin milestone 2 work                                 |
+| apabba2        | Milestone 1, environment setup  |  Begin milestone 2 work                                 |
 </br>
 
 

@@ -47,39 +47,43 @@ Meeting notes: Discussed responsibilities, weekly meeting time, assignment 1 dea
 
 <b>Week 2</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: Brogdon3, yl159, yzhong32, hend, srt6, brianib2, apabba2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: Reviewed milestone 2 instructions prior to meeting, then discussed as a team the plan to
+create informal requirements and use cases. Created a few informal requirements as a guideline, set up next
+meeting time and outlined plan to work throughout week.
 </br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| NetID          | Progress from last week         | Tasks for next week                                     |
+| ---------------| --------------------------------| --------------------------------------------------------|
+| Brogdon3       | Milestone 2 reviewed            |  Contribute to informal requirements and use cases      |
+| yl159          | Milestone 2 reviewed            |  Contribute to informal requirements and use cases      |
+| yzhong32       | Milestone 2 reviewed            |  Contribute to informal requirements and use cases      |
+| hend           | Milestone 2 reviewed            |  Contribute to informal requirements and use cases      |
+| brianib2       | Milestone 2 reviewed            |  Contribute to informal requirements and use cases      |
+| srt6           | Milestone 2 reviewed            |  Contribute to informal requirements and use cases      |
+| sbecerr2       | Milestone 2 reviewed            |  Contribute to informal requirements and use cases      |
+| apabba2        | Milestone 2 reviewed            |  Contribute to informal requirements and use cases      |
 </br>
 
 
 <b>Week 3</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: Brogdon3, yl159, yzhong32, hend, srt6, apabba2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: Reviewed all informal requirements and use cases and agreed on them as a team.  Began work on
+UML class diagrams and component transition graph, outlined plan to collaborate and finish rest of milestone
+2 on time. Agreed to next meeting time next tuesday 10/17 and to check in throughout week on progress.  
 </br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| NetID          | Progress from last week         | Tasks for next week                                     |
+| ---------------| --------------------------------| --------------------------------------------------------|
+| Brogdon3       | Requirements/use cases done     | Collaborate on UML / component transition, submit m2 PDF|
+| yl159          | Requirements/use cases done     | Collaborate on UML / component transition               |
+| yzhong32       | Requirements/use cases done     | Collaborate on UML / component transition               |
+| hend           | Requirements/use cases done     | Collaborate on UML / component transition               |
+| brianib2       | Requirements/use cases done     | Collaborate on UML / component transition               |
+| srt6           | Requirements/use cases done     | Collaborate on UML / component transition               |
+| sbecerr2       | Requirements/use cases done     | Collaborate on UML / component transition               |
+| apabba2        | Requirements/use cases done     | Collaborate on UML / component transition               ||
 </br>
 
 

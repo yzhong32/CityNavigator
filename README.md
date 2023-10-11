@@ -47,7 +47,7 @@ Meeting notes: Discussed responsibilities, weekly meeting time, assignment 1 dea
 
 <b>Week 2</b>
 </br>
-Members present: Brogdon3, yl159, yzhong32, hend, srt6, brianib2, apabba2
+Members present: Brogdon3, yl159, yzhong32, hend, srt6, brianib2, sbecerr2, apabba2
 </br>
 Meeting notes: Reviewed milestone 2 instructions prior to meeting, then discussed as a team the plan to
 create informal requirements and use cases. Created a few informal requirements as a guideline, set up next
@@ -68,7 +68,7 @@ meeting time and outlined plan to work throughout week.
 
 <b>Week 3</b>
 </br>
-Members present: Brogdon3, yl159, yzhong32, hend, srt6, apabba2
+Members present: Brogdon3, yl159, yzhong32, hend, srt6, brianib2, sbecerr2, apabba2
 </br>
 Meeting notes: Reviewed all informal requirements and use cases and agreed on them as a team.  Began work on
 UML class diagrams and component transition graph, outlined plan to collaborate and finish rest of milestone

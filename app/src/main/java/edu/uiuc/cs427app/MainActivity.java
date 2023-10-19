@@ -198,5 +198,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
 
     }
+
+    public void logoutButtonClicked(View view) {
+        // Perform logout operations here (such as clearing session data, logging out the user, etc.)
+
+        // Example: If you want to finish the current activity and go back to the login page
+//        finish();
+        // Or, if you want to start the login activity explicitly
+         Intent intent = new Intent(this, LoginActivity.class);
+         startActivity(intent);
+    }
 }
 

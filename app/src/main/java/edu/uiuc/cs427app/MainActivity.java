@@ -1,8 +1,10 @@
 package edu.uiuc.cs427app;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
@@ -13,6 +15,11 @@ import edu.uiuc.cs427app.databinding.ActivityMainBinding;
 
 import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private AppBarConfiguration appBarConfiguration;
@@ -22,6 +29,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // get user info
+        // Access the SharedPreferences file with the same name used in the other activity
+        SharedPreferences sharedPreferences = getSharedPreferences("user", MODE_PRIVATE);
+        // Retrieve values from SharedPreferences
+        String username = sharedPreferences.getString("username", "");
+        String password = sharedPreferences.getString("password", "");
+        Set<String> citiesSet = sharedPreferences.getStringSet("cities", new HashSet<>());
+        List<String> citiesList = new ArrayList<>(citiesSet);
+        String theme = sharedPreferences.getString("theme", "");
+        User user = new User(username, password, citiesList, theme);
+        Log.d("user we will process: ", user.toString());
 
         // Initializing the UI components
         // The list of locations should be customized per user (change the implementation so that

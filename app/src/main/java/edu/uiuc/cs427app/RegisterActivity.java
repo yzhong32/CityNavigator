@@ -1,5 +1,7 @@
 package edu.uiuc.cs427app;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.*;
@@ -7,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -17,10 +20,13 @@ public class RegisterActivity extends AppCompatActivity {
     private RadioGroup themeRadioGroup;
     private Button register;
 
+    private SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        sharedPreferences = getSharedPreferences("user", MODE_PRIVATE);
 
         // bind everything with id
         toolbar = findViewById(R.id.toolbar);
@@ -33,7 +39,6 @@ public class RegisterActivity extends AppCompatActivity {
         cityCheckBoxes[2] = findViewById(R.id.checkBox3);
         cityCheckBoxes[3] = findViewById(R.id.checkBox4);
         register = findViewById(R.id.register);
-
 
 
         // set listener for go back button
@@ -74,6 +79,17 @@ public class RegisterActivity extends AppCompatActivity {
 
                 // TODO: save user info and jump to MainActivity
                 User user = new User(username, password, selectedCities, selectedTheme);
+
+                // TODO: how can we share this user info when I jump to MainActivity?
+                SharedPreferences.Editor edit = sharedPreferences.edit();
+                edit.putString("username", username);
+                edit.putString("password", password);
+                edit.putStringSet("cities", new HashSet<>(selectedCities));
+                edit.putString("theme", selectedTheme);
+                edit.commit();
+
+                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }

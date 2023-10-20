@@ -31,7 +31,8 @@ public class UserDbHelper extends SQLiteOpenHelper {
     public void onOpen(SQLiteDatabase db) {
         super.onOpen(db);
         // Drop the existing user table and recreate it when the database is opened
-        db.execSQL("DROP TABLE IF EXISTS " + UserContract.TABLE_NAME);
-        onCreate(db);
+        // TODO: uncomment this part when move to production
+//        db.execSQL("DROP TABLE IF EXISTS " + UserContract.TABLE_NAME);
+//        onCreate(db);
     }
 }

@@ -13,6 +13,10 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.MyFirstApp">
+        <provider
+                android:name=".UserContentProvider"
+                android:authorities="edu.uiuc.cs427app.provider"
+                android:exported="false"/>
         <activity
                 android:name=".RegisterActivity"
                 android:exported="false"/>

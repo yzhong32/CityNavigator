@@ -1,7 +1,9 @@
 package edu.uiuc.cs427app;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.*;
@@ -21,6 +23,8 @@ public class RegisterActivity extends AppCompatActivity {
     private Button register;
 
     private SharedPreferences sharedPreferences;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +91,17 @@ public class RegisterActivity extends AppCompatActivity {
                 edit.putStringSet("cities", new HashSet<>(selectedCities));
                 edit.putString("theme", selectedTheme);
                 edit.commit();
+
+                // Prepare the ContentValues to be inserted into the ContentProvider
+                ContentValues values = new ContentValues();
+                values.put(UserContract.COLUMN_USERNAME, user.getUsername());
+                values.put(UserContract.COLUMN_PASSWORD, user.getPassword());
+                values.put(UserContract.COLUMN_FAVORED_CITIES, TextUtils.join(",", user.getFavoredCities()));
+                values.put(UserContract.COLUMN_THEME, user.getTheme());
+
+                // Insert data into the ContentProvider
+                // TODO: check username is not in database first
+                getContentResolver().insert(UserContentProvider.CONTENT_URI, values);
 
                 Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                 startActivity(intent);

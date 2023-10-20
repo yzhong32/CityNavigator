@@ -1,16 +1,17 @@
 package edu.uiuc.cs427app;
 
 import android.app.AlertDialog;
+import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.text.InputType;
+import android.text.TextUtils;
 import android.util.Log;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
@@ -18,8 +19,6 @@ import android.view.View;
 import androidx.navigation.ui.AppBarConfiguration;
 
 import edu.uiuc.cs427app.databinding.ActivityMainBinding;
-
-import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -58,6 +57,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView textView = findViewById(R.id.textView3);
         textView.setText("Hello, " + username);
 
+        // set theme
+        setAppTheme(theme);
 
         // add cities dynamically
         for (String city : citiesList) {
@@ -77,6 +78,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+    }
+
+    private void setAppTheme(String theme) {
+        switch (theme) {
+            case "Theme 1":
+                setTheme(R.style.Theme_MyFirstApp); // Set the default theme
+                break;
+            case "Theme 2":
+                setTheme(R.style.Theme_MySecondApp); // Set the second theme
+                break;
+            case "Theme 3":
+                setTheme(R.style.Theme_MyThirdApp); // Set the third theme
+                break;
+            default:
+                setTheme(R.style.Theme_MyFirstApp); // Set a default theme if the user's theme string is not recognized
+        }
     }
 
     private void showAddCityDialog() {
@@ -99,6 +116,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     // Dynamically create a button for the new city
                     addButtonForCity(newCity);
                     // TODO: save user city selection
+                    updateCitiesListInContentProvider(username, citiesList);
                 }
             }
         });
@@ -112,6 +130,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         builder.show();
     }
 
+    private void updateCitiesListInContentProvider(String username, List<String> updatedCitiesList) {
+        // Define the URI for the user whose cities list needs to be updated
+        Uri uri = Uri.parse("content://edu.uiuc.cs427app.provider/users");
+
+        // Create ContentValues to store the updated cities list
+        ContentValues values = new ContentValues();
+        values.put(UserContract.COLUMN_FAVORED_CITIES, TextUtils.join(",", updatedCitiesList));
+
+        // Define the selection (where clause) to identify the user by username
+        String selection = UserContract.COLUMN_USERNAME + " = ?";
+        String[] selectionArgs = {username};
+
+        // Perform the update operation using the content provider
+        int rowsUpdated = getContentResolver().update(uri, values, selection, selectionArgs);
+
+        if (rowsUpdated > 0) {
+            // Update successful, show a success message (e.g., via Toast)
+            Toast.makeText(this, "Cities list updated successfully", Toast.LENGTH_SHORT).show();
+        } else {
+            // Update failed, show an error message (e.g., via Toast)
+            Toast.makeText(this, "Failed to update cities list", Toast.LENGTH_SHORT).show();
+        }
+    }
     private void addButtonForCity(String city) {
         // Create a new LinearLayout to hold the city details
         LinearLayout cityLayout = new LinearLayout(this);
@@ -157,6 +198,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Logic to remove the city from the list
                 // Implement this as per your requirements
                 removeCity(city);
+                updateCitiesListInContentProvider(username, citiesList);
             }
         });
         cityLayout.addView(removeCityButton);

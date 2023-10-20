@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textView.setText("Hello, " + username);
 
 
-
         // add cities dynamically
         for (String city : citiesList) {
             addButtonForCity(city);
@@ -156,6 +155,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this, "Failed to update cities list", Toast.LENGTH_SHORT).show();
         }
     }
+
     private void addButtonForCity(String city) {
         // Create a new LinearLayout to hold the city details
         LinearLayout cityLayout = new LinearLayout(this);
@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Create a button to show the map for the city
         Button showMapButton = new Button(this);
-        showMapButton.setText("Show Map");
+        showMapButton.setText("Map");
         showMapButton.setLayoutParams(new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
@@ -187,6 +187,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
         cityLayout.addView(showMapButton);
+
+        // Create a button to show the weather for the city
+        Button showWeatherButton = new Button(this);
+        showWeatherButton.setText("Weather");
+        showWeatherButton.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        ));
+        showWeatherButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Logic to show the map for the selected city
+                // Implement this as per your requirements
+                showWeather(city);
+            }
+        });
+        cityLayout.addView(showWeatherButton);
 
         // Create a button to remove the city from the list
         Button removeCityButton = new Button(this);
@@ -211,6 +228,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonLayout.addView(cityLayout);
     }
 
+
     private void removeCity(String cityName) {
         // Remove the city from the list of added cities
         citiesList.remove(cityName);
@@ -233,8 +251,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showMap(String selectedCity) {
-        // Handle click on city buttons
-        Intent intent = new Intent(this, DetailsActivity.class);
+        // Handle click on show map buttons
+        Intent intent = new Intent(this, MapActivity.class);
+        intent.putExtra("city", selectedCity);
+        startActivity(intent);
+    }
+
+    private void showWeather(String selectedCity) {
+        Intent intent = new Intent(this, WeatherActivity.class);
         intent.putExtra("city", selectedCity);
         startActivity(intent);
     }
@@ -250,8 +274,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Example: If you want to finish the current activity and go back to the login page
 //        finish();
         // Or, if you want to start the login activity explicitly
-         Intent intent = new Intent(this, LoginActivity.class);
-         startActivity(intent);
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 }
 

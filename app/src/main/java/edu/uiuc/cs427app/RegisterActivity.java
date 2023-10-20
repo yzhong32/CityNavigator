@@ -37,11 +37,12 @@ public class RegisterActivity extends AppCompatActivity {
         etUsername = findViewById(R.id.username);
         etPassword = findViewById(R.id.password);
         themeRadioGroup = findViewById(R.id.themeRadioGroup);
-        cityCheckBoxes = new CheckBox[4]; // Change the array size based on the number of cities
+        cityCheckBoxes = new CheckBox[5]; // Change the array size based on the number of cities
         cityCheckBoxes[0] = findViewById(R.id.checkBox1);
         cityCheckBoxes[1] = findViewById(R.id.checkBox2);
         cityCheckBoxes[2] = findViewById(R.id.checkBox3);
         cityCheckBoxes[3] = findViewById(R.id.checkBox4);
+        cityCheckBoxes[4] = findViewById(R.id.checkBox5);
         register = findViewById(R.id.register);
 
 

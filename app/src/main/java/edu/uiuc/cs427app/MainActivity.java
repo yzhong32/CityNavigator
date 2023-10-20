@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_main);
 
         // get user info
         // Access the SharedPreferences file with the same name used in the other activity
@@ -53,18 +53,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         User user = new User(username, password, citiesList, theme);
         Log.d("user we will process: ", user.toString());
 
+        // set theme
+        setAppTheme(theme);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
         // set username to show up on the screen
         TextView textView = findViewById(R.id.textView3);
         textView.setText("Hello, " + username);
 
-        // set theme
-        setAppTheme(theme);
+
 
         // add cities dynamically
         for (String city : citiesList) {
             addButtonForCity(city);
         }
-
 
 
         // Initializing the UI components

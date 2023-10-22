@@ -83,26 +83,26 @@ UML class diagrams and component transition graph, outlined plan to collaborate 
 | brianib2       | Requirements/use cases done     | Collaborate on UML / component transition               |
 | srt6           | Requirements/use cases done     | Collaborate on UML / component transition               |
 | sbecerr2       | Requirements/use cases done     | Collaborate on UML / component transition               |
-| apabba2        | Requirements/use cases done     | Collaborate on UML / component transition               ||
+| apabba2        | Requirements/use cases done     | Collaborate on UML / component transition               |
 </br>
 
 
 <b>Week 4</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: Brogdon3, yl159, yzhong32, hend, srt6, brianib2, sbecerr2, apabba2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We revisited the requirements for Milestone 3. This included a comprehensive analysis of the specific features and functionality that need to be delivered as part of this milestone. Agreed to meet again on Tuesday 10/
 </br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| NetID          | Progress from last week         | Tasks for next week         |
+| ---------------| --------------------------------| ----------------------------|
+|   Brogdon3     | The team will work together on  | review and improve the code |  
+|   yl159        | Implement user registration and | review and improve the code |                     
+|   yzhong32     | log in / add and remove cities /| review and improve the code |                     
+|   hend         | create multiple application     | review and improve the code |                     
+|   srt6         | themes.                         | review and improve the code |                   
+|   brianib2     |                                 | review and improve the code |                   
+|   sbecerr2     |                                 | review and improve the code |                  
+|   apabba2      |                                 | review and improve the code |                  
 </br>
 
 

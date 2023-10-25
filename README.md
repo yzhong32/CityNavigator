@@ -108,20 +108,20 @@ Meeting notes: We revisited the requirements for Milestone 3. This included a co
 
 <b>Week 5</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: Brogdon3, yl159, yzhong32, hend, srt6, brianib2, sbecerr2, apabba2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We discussed implemented functionality and made sure it meets requirements. Set expectation to accomplish video by friday and have documentation done by then as well.
 </br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| NetID          | Progress from last week         | Tasks for next week           |
+| ---------------| --------------------------------| ----------------------------  |
+|   Brogdon3     | Implemented milestone 3 features| Document, turn in milestone 3 |  
+|   yl159        | Implemented milestone 3 features| Record video                  |                     
+|   yzhong32     | Implemented milestone 3 features| Refactor and document code    |                     
+|   hend         | Implemented milestone 3 features| Refactor and document code    |                      
+|   srt6         | Implemented milestone 3 features| Refactor and document code    |                    
+|   brianib2     | Implemented milestone 3 features| Refactor and document code    |                   
+|   sbecerr2     | Implemented milestone 3 features| Refactor and document code    |                   
+|   apabba2      | Implemented milestone 3 features| Refactor and document code    |   
 </br>
 
 

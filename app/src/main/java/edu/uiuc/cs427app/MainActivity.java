@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     List<String> citiesList;
     String theme;
 
-
+    // called when the activity is started to set layout and content
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    //set the theme to the user preference
     private void setAppTheme(String theme) {
         switch (theme) {
             case "Theme 1":
@@ -98,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    // dialog for user to add city
     private void showAddCityDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Add a New City");
@@ -132,6 +134,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         builder.show();
     }
 
+    //updates list of cities in the content provider
     private void updateCitiesListInContentProvider(String username, List<String> updatedCitiesList) {
         // Define the URI for the user whose cities list needs to be updated
         Uri uri = Uri.parse("content://edu.uiuc.cs427app.provider/users");
@@ -156,6 +159,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    // adds a button and the UI elements for a city
     private void addButtonForCity(String city) {
         // Create a new LinearLayout to hold the city details
         LinearLayout cityLayout = new LinearLayout(this);
@@ -229,6 +233,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+    // removes a city
     private void removeCity(String cityName) {
         // Remove the city from the list of added cities
         citiesList.remove(cityName);
@@ -250,6 +255,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+
+    // starts show map activity for the city
     private void showMap(String selectedCity) {
         // Handle click on show map buttons
         Intent intent = new Intent(this, MapActivity.class);
@@ -257,17 +264,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
+    // starts show weather activity for teh city
     private void showWeather(String selectedCity) {
         Intent intent = new Intent(this, WeatherActivity.class);
         intent.putExtra("city", selectedCity);
         startActivity(intent);
     }
 
+    //invokes a view when clicked
     @Override
     public void onClick(View view) {
 
     }
 
+    // logs user out and redirects to login page
     public void logoutButtonClicked(View view) {
         // Perform logout operations here (such as clearing session data, logging out the user, etc.)
 

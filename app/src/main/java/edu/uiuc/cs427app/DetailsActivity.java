@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DetailsActivity extends AppCompatActivity implements View.OnClickListener{
 
+    // called when the activity is started to set layout and content
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,9 +36,11 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
     }
 
-    @Override
-    public void onClick(View view) {
-        //Implement this (create an Intent that goes to a new Activity, which shows the map)
-    }
+
+    // invokes a view when clicked
+     @Override
+     public void onClick(View view) {
+         //Implement this (create an Intent that goes to a new Activity, which shows the map)
+     }
 }
 

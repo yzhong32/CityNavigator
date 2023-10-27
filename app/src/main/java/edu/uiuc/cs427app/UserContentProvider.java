@@ -31,12 +31,15 @@ public class UserContentProvider extends ContentProvider {
         sUriMatcher.addURI("edu.uiuc.cs427app.provider", "users/#", USER_ID);
     }
 
+
+    // initializes the content provider activity
     @Override
     public boolean onCreate() {
         dbHelper = new UserDbHelper(getContext());
         return true;
     }
 
+    // query data from the db
     @Nullable
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
@@ -46,6 +49,7 @@ public class UserContentProvider extends ContentProvider {
         return cursor;
     }
 
+    // insert data in to db
     @Nullable
     @Override
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
@@ -63,6 +67,7 @@ public class UserContentProvider extends ContentProvider {
         }
     }
 
+    // update data in db
     @Override
     public int update(@NonNull Uri uri, @Nullable ContentValues values, @Nullable String selection, @Nullable String[] selectionArgs) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -73,6 +78,7 @@ public class UserContentProvider extends ContentProvider {
         return rowsUpdated;
     }
 
+    // delete data in db
     @Override
     public int delete(@NonNull Uri uri, @Nullable String selection, @Nullable String[] selectionArgs) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -83,6 +89,7 @@ public class UserContentProvider extends ContentProvider {
         return rowsDeleted;
     }
 
+    // get content type
     @Nullable
     @Override
     public String getType(@NonNull Uri uri) {

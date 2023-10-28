@@ -36,7 +36,7 @@ public class User {
     public User() {
     }
 
-    // overload to string method 
+    // overload to string method
     @Override
     public String toString() {
         return "User{" +
@@ -47,10 +47,6 @@ public class User {
                 '}';
     }
 
-    // entry point for the app
-    public static void main(String[] args) {
-
-    }
 
     // getter for username
     public String getUsername() {

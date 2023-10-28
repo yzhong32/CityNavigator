@@ -26,6 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
+    // called when the activity is started to set layout and content
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

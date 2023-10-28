@@ -24,24 +24,34 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etUsername;
     private EditText etPassword;
 
+
+    // called when the activity is started to set layout and content
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // initialize UI components
         register = findViewById(R.id.register);
         login = findViewById(R.id.login);
         etUsername = findViewById(R.id.username);
         etPassword = findViewById(R.id.password);
+
+        // Set up the register button to navigate to the RegisterActivity
         register.setOnClickListener(new View.OnClickListener() {
             @Override
+            // Handles the click event for the login TextView
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });
+
+        // Set up the login button to validate user credentials and navigate to the MainActivity
         login.setOnClickListener(new View.OnClickListener() {
             @Override
+
+            //Handles the click event for the register TextView
             public void onClick(View view) {
                 String username = etUsername.getText().toString().trim();
                 String password = etPassword.getText().toString().trim();
@@ -62,6 +72,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    //Validates the user's credentials against the content provider.
     @SuppressLint("Range")
     private User validateUserFromContentProvider(String username, String password) {
         // Perform a query on the content provider to validate the user

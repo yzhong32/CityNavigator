@@ -8,6 +8,8 @@ import android.os.Bundle;
 
 public class WeatherActivity extends AppCompatActivity {
     private Toolbar toolbar;
+
+    // called when the activity is started to set layout and content
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +25,7 @@ public class WeatherActivity extends AppCompatActivity {
         TextView welcomeMessage = findViewById(R.id.welcomeText);
         TextView cityInfoMessage = findViewById(R.id.cityInfo);
 
+        // sets the listener for when activity is finished. 
         toolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

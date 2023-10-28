@@ -63,16 +63,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textView.setText("Hello, " + username);
 
 
+        System.out.println(citiesList.size());
+
         // add cities dynamically
         // BUGFIX
         for (String city : citiesList) {
             if (city.length() == 0) {
-                break;
+                continue;
             }
             addButtonForCity(city);
         }
-
-
 
 
         // Initializing the UI components
@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
     }
+
     // bugfix: city buttons need to hide when there are no cities in citieslist
     private void updateButtonsVisibility() {
 

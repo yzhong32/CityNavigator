@@ -64,9 +64,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         // add cities dynamically
+        // BUGFIX
         for (String city : citiesList) {
+            if (city.length() == 0) {
+                break;
+            }
             addButtonForCity(city);
         }
+
+
 
 
         // Initializing the UI components
@@ -79,6 +85,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 showAddCityDialog();
             }
         });
+
+    }
+    // bugfix: city buttons need to hide when there are no cities in citieslist
+    private void updateButtonsVisibility() {
+
 
     }
 

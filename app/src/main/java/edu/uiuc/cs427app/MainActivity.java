@@ -65,6 +65,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // add cities dynamically
         for (String city : citiesList) {
+            if (city.length() == 0) {
+                break;
+            }
             addButtonForCity(city);
         }
 

@@ -20,10 +20,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 
 import edu.uiuc.cs427app.databinding.ActivityMainBinding;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -52,6 +49,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         theme = sharedPreferences.getString("theme", "");
         User user = new User(username, password, citiesList, theme);
         Log.d("user we will process: ", user.toString());
+
+        // for developing map and weather
+        username = "Yiming";
+        password = "123456";
+        citiesList = new ArrayList<>(Arrays.asList("Dallas", "Houston"));
+        theme = "Theme 1";
+
 
         // set theme
         setAppTheme(theme);

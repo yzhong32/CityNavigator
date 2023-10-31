@@ -7,6 +7,7 @@
         android:layout_height="match_parent"
         tools:context=".WeatherActivity"
         android:orientation="vertical">
+
     <Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -14,15 +15,12 @@
             android:titleTextColor="@color/white"
             android:title="Weather"
             android:navigationIcon="@drawable/ic_baseline_arrow_back_24"
-            android:background="@color/toolbar">
-    </Toolbar>
+            android:background="@color/toolbar"/>
 
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="1dp">
+            android:orientation="vertical">
 
         <TextView
                 android:id="@+id/welcomeText"
@@ -33,5 +31,47 @@
                 android:id="@+id/cityInfo"
                 android:layout_width="match_parent"
                 android:layout_height="50dp" />
+
+        <TextView
+                android:id="@+id/cityName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textSize="18sp"/>
+
+        <TextView
+                android:id="@+id/dateTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textSize="18sp"/>
+
+        <TextView
+                android:id="@+id/temperature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textSize="18sp"/>
+
+        <TextView
+                android:id="@+id/weather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textSize="18sp"/>
+
+        <TextView
+                android:id="@+id/humidity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textSize="18sp"/>
+
+        <TextView
+                android:id="@+id/wind"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textSize="18sp"/>
     </LinearLayout>
 </LinearLayout>

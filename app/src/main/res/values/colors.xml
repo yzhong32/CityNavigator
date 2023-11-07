@@ -24,4 +24,6 @@
     <!-- Yellow Colors -->
     <color name="yellow_200">#fff59d</color>
     <color name="yellow_700">#fbc02d</color>
+
+    <color name="colorPrimary">#3F51B5</color>
 </resources>

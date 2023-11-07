@@ -18,6 +18,7 @@ android {
 
     buildTypes {
 //        debug {
+////            debuggable true // Make sure this is set to true
 //            testCoverageEnabled = true // Enable test coverage for debug build
 //        }
         release {
@@ -50,4 +51,5 @@ dependencies {
 
     // Jacoco for generating code coverage reports
     androidTestImplementation 'org.jacoco:org.jacoco.agent:0.8.7'
+    androidTestImplementation 'org.mockito:mockito-core:3.11.2'
 }

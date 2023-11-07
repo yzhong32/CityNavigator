@@ -35,7 +35,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     // API keys
     private static final String GEOCODING_API_KEY = "AIzaSyBt_Q01vX0SxrkN_cVoGnxjlP-Y717Z7LY";
 
-    private static final float ZOOM_LEVEL = 100.0f;
+    private static final float ZOOM_LEVEL = 10.0f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

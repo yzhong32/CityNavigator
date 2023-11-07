@@ -267,7 +267,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     // starts show map activity for the city
-    private void showMap(String selectedCity) {
+    void showMap(String selectedCity) {
         // Handle click on show map buttons
         Intent intent = new Intent(this, MapActivity.class);
         intent.putExtra("city", selectedCity);

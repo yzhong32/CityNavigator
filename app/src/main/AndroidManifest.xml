@@ -16,6 +16,9 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.MyFirstApp">
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyBt_Q01vX0SxrkN_cVoGnxjlP-Y717Z7LY" />
         <activity
                 android:name=".WeatherActivity"
                 android:exported="false"/>

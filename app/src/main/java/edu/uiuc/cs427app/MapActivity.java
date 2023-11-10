@@ -117,6 +117,8 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
             // Move the camera to the city's location
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cityLocation, ZOOM_LEVEL));
+            mMap.getUiSettings().setZoomControlsEnabled(true); // Enable zoom controls
+
         }
     }
 

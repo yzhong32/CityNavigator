@@ -5,6 +5,9 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 
     <application
             android:allowBackup="true"
@@ -13,6 +16,9 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.MyFirstApp">
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyBt_Q01vX0SxrkN_cVoGnxjlP-Y717Z7LY" />
         <activity
                 android:name=".WeatherActivity"
                 android:exported="false"/>

@@ -86,21 +86,25 @@ public class WeatherActivity extends AppCompatActivity {
                             String formattedDateTime = dateFormat.format(date);
 
                             JSONObject main = response.getJSONObject("main");
-                            double temperature = main.getDouble("temp");
+                            double temperature = main.getDouble("temp") - 273;
                             int humidity = main.getInt("humidity");
                             JSONArray weatherArray = response.getJSONArray("weather");
                             JSONObject weatherObject = weatherArray.getJSONObject(0);
                             String weatherDescription = weatherObject.getString("description");
                             JSONObject wind = response.getJSONObject("wind");
                             double windSpeed = wind.getDouble("speed");
+                            double degree = wind.getDouble("deg");
+//{"speed":8.75,"deg":180,"gust":12.35}
+
 
                             // Update TextViews with weather data
                             cityNameTextView.setText("name: " + name);
                             dateTimeTextView.setText("Time: "+String.valueOf(formattedDateTime));
-                            temperatureTextView.setText("Temperature: " + String.valueOf(temperature));
+                            temperatureTextView.setText("Temperature: " + String.valueOf((int) Math.round(temperature)) + " C");
                             weatherTextView.setText("Weather: "+ weatherDescription);
                             humidityTextView.setText("Humidity: " + String.valueOf(humidity));
-                            windTextView.setText("Wind speed: " + String.valueOf(windSpeed));
+                            windTextView.setText("Wind speed: " + String.valueOf(windSpeed)+ " Wind deg: " + String.valueOf(degree));
+
 
                         } catch (JSONException e) {
                             e.printStackTrace();

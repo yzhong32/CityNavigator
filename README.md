@@ -127,39 +127,40 @@ Meeting notes: We discussed implemented functionality and made sure it meets req
 
 <b>Week 6</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: Brogdon3, yl159, yzhong32, hend, srt6, brianib2, sbecerr2, apabba2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We discussed the upcoming functionality needed for milestone 4 and split the work, assigning
+tasks for the upcoming two week sprint
 </br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| NetID          | Progress from last week         | Tasks for next week                                     |
+| ---------------| --------------------------------| --------------------------------------------------------|
+| Brogdon3       | Milestone 3 Completed           |  Document team meeting, start working milestone 4       |
+| yl159          | Milestone 3 Completed           |  Start implementing milestone 4 features                |
+| yzhong32       | Milestone 3 Completed           |  Start implementing milestone 4 features                |
+| hend           | Milestone 3 Completed           |  Start implementing milestone 4 features                |
+| brianib2       | Milestone 3 Completed           |  Start implementing milestone 4 features                |
+| srt6           | Milestone 3 Completed           |  Start implementing milestone 4 features                |
+| sbecerr2       | Milestone 3 Completed           |  Start implementing milestone 4 features                |
+| apabba2        | Milestone 3 Completed           |  Start implementing milestone 4 features                |
 </br>
 
 
 <b>Week 7</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: Brogdon3, yl159, yzhong32, hend, srt6, brianib2, sbecerr2, apabba2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We discussed our progress (50% of m4 implemented), discussed remaining 50% and tasks for recording the video and submitting the project NLT Saturday.
 </br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| NetID          | Progress from last week         | Tasks for next week                                     |
+| ---------------| --------------------------------| --------------------------------------------------------|
+| Brogdon3       | Meeting notes, reviewed m4      |  Assist with finishing milestone 4                      |
+| yl159          | Milestone 3 Completed           |  Finish milestone4 implementation                       |
+| yzhong32       | Milestone 3 Completed           |  Finish milestone4 implementation                       |
+| hend           | Milestone 3 Completed           |  Finish milestone4 implementation                       |
+| brianib2       | Milestone 3 Completed           |  Finish milestone4 implementation                       |
+| srt6           | Milestone 3 Completed           |  Finish milestone4 implementation                       |
+| sbecerr2       | Milestone 3 Completed           |  Finish milestone4 implementation                       |
+| apabba2        | Milestone 3 Completed           |  Finish milestone4 implementation                       |
 </br>
 
 

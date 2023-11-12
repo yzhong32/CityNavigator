@@ -18,14 +18,18 @@ import java.util.HashSet;
 import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
-
+    // UI components
     private TextView register;
     private TextView login;
     private EditText etUsername;
     private EditText etPassword;
 
 
-    // called when the activity is started to set layout and content
+    /**
+     * Called when the activity is started to set layout and content.
+     *
+     * @param savedInstanceState A Bundle containing the activity's previously saved state.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,7 +76,14 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    //Validates the user's credentials against the content provider.
+
+    /**
+     * Validates the user's credentials against the content provider.
+     *
+     * @param username The entered username.
+     * @param password The entered password.
+     * @return User object if authentication is successful, null otherwise.
+     */
     @SuppressLint("Range")
     private User validateUserFromContentProvider(String username, String password) {
         // Perform a query on the content provider to validate the user

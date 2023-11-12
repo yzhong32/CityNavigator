@@ -26,7 +26,14 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-    // called when the activity is started to set layout and content
+    /**
+     * onCreate
+     *
+     * Called when the activity is first created. It initializes the layout, binds UI elements with their
+     * corresponding IDs, and sets listeners for toolbar, registration button, and city checkboxes.
+     *
+     * @param savedInstanceState The saved state of the activity.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
         register.setOnClickListener(view -> {
             String username = etUsername.getText().toString().trim();
             String password = etPassword.getText().toString().trim();
+
             // Retrieve selected theme from the checked RadioButton in the RadioGroup
             int selectedThemeId = themeRadioGroup.getCheckedRadioButtonId();
             String selectedTheme = "";
@@ -66,6 +74,7 @@ public class RegisterActivity extends AppCompatActivity {
                 RadioButton selectedRadioButton = findViewById(selectedThemeId);
                 selectedTheme = selectedRadioButton.getText().toString();
             }
+
             // Retrieve cities selected
             List<String> selectedCities = new ArrayList<>();
             for (CheckBox checkBox : cityCheckBoxes) {
@@ -83,10 +92,10 @@ public class RegisterActivity extends AppCompatActivity {
                                 " with theme " + selectedTheme,
                         Toast.LENGTH_SHORT).show();
 
-                // TODO: save user info and jump to MainActivity
+                // save user info and jump to MainActivity
                 User user = new User(username, password, selectedCities, selectedTheme);
 
-                // TODO: how can we share this user info when I jump to MainActivity?
+                // Instructions on how can we share this user info when I jump to MainActivity?
                 SharedPreferences.Editor edit = sharedPreferences.edit();
                 edit.putString("username", username);
                 edit.putString("password", password);
@@ -102,7 +111,7 @@ public class RegisterActivity extends AppCompatActivity {
                 values.put(UserContract.COLUMN_THEME, user.getTheme());
 
                 // Insert data into the ContentProvider
-                // TODO: check username is not in database first
+                // check username is not in database first
                 getContentResolver().insert(UserContentProvider.CONTENT_URI, values);
 
                 Intent intent = new Intent(RegisterActivity.this, MainActivity.class);

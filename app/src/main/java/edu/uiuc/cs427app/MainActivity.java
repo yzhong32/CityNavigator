@@ -27,16 +27,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
+    // User information
     String username;
     String password;
     List<String> citiesList;
     String theme;
 
-    // called when the activity is started to set layout and content
+    /**
+     * Called when the activity is started to set layout and content.
+     *
+     * @param savedInstanceState A Bundle containing the activity's previously saved state.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
+        // super.onCreate(savedInstanceState);
+        // setContentView(R.layout.activity_main);
 
         // get user info
         // Access the SharedPreferences file with the same name used in the other activity
@@ -50,15 +55,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         User user = new User(username, password, citiesList, theme);
         Log.d("user we will process: ", user.toString());
 
-//        // for developing map and weather
-//        username = "Yiming";
-//        password = "123456";
-//        citiesList = new ArrayList<>(Arrays.asList("Dallas", "Houston"));
-//        theme = "Theme 1";
+        //// for developing map and weather
+        // username = "Yiming";
+        // password = "123456";
+        // citiesList = new ArrayList<>(Arrays.asList("Dallas", "Houston"));
+        // theme = "Theme 1";
 
 
         // set theme
         setAppTheme(theme);
+
+        // Set the layout and content
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -92,7 +99,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    //set the theme to the user preference
+    /**
+     * Sets the app theme based on user preference.
+     *
+     * @param theme The selected theme string.
+     */
     private void setAppTheme(String theme) {
         switch (theme) {
             case "Theme 1":
@@ -109,7 +120,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    // dialog for user to add city
+    /**
+     * Shows a dialog for the user to add a new city.
+     */
     private void showAddCityDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Add a New City");
@@ -144,7 +157,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         builder.show();
     }
 
-    //updates list of cities in the content provider
+    /**
+     * Updates the list of favored cities in the content provider.
+     *
+     * @param username          The username of the user.
+     * @param updatedCitiesList The updated list of favored cities.
+     */
     private void updateCitiesListInContentProvider(String username, List<String> updatedCitiesList) {
         // Define the URI for the user whose cities list needs to be updated
         Uri uri = Uri.parse("content://edu.uiuc.cs427app.provider/users");
@@ -169,7 +187,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    // adds a button and the UI elements for a city
+    /**
+     * Adds a button and UI elements for a city dynamically.
+     *
+     * This method dynamically adds a button and UI elements for a city to the user interface.
+     * It creates a new LinearLayout to hold the city details, including a TextView displaying the
+     * city name and buttons for showing the map, weather, and removing the city from the list.
+     *
+     * @param city The city to add a button for.
+     */
     private void addButtonForCity(String city) {
         // Create a new LinearLayout to hold the city details
         LinearLayout cityLayout = new LinearLayout(this);
@@ -245,7 +271,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    // removes a city
+    /**
+     * removeCity
+     *
+     * This method removes a city from the list of added cities and updates the UI accordingly.
+     *
+     * @param cityName The name of the city to be removed.
+     */
     private void removeCity(String cityName) {
         // Remove the city from the list of added cities
         citiesList.remove(cityName);
@@ -268,7 +300,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    // starts show map activity for the city
+    /**
+     * showMap
+     *
+     * This method starts the MapActivity for the selected city.
+     *
+     * @param selectedCity The name of the city for which the map will be displayed.
+     */
     void showMap(String selectedCity) {
         // Handle click on show map buttons
         Intent intent = new Intent(this, MapActivity.class);
@@ -276,25 +314,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
     }
 
-    // starts show weather activity for teh city
+    /**
+     * showWeather
+     *
+     * This method starts the WeatherActivity for the selected city.
+     *
+     * @param selectedCity The name of the city for which the weather will be displayed.
+     */
     void showWeather(String selectedCity) {
         Intent intent = new Intent(this, WeatherActivity.class);
         intent.putExtra("city", selectedCity);
         startActivity(intent);
     }
 
-    //invokes a view when clicked
+    /**
+     * onClick
+     *
+     * This method is invoked when a view is clicked. Currently, it does not contain any specific logic.
+     *
+     * @param view The clicked view.
+     */
     @Override
     public void onClick(View view) {
 
     }
 
-    // logs user out and redirects to login page
+    /**
+     * logoutButtonClicked
+     *
+     * This method logs the user out and redirects them to the login page.
+     *
+     * @param view The view associated with the clicked button.
+     */
     public void logoutButtonClicked(View view) {
         // Perform logout operations here (such as clearing session data, logging out the user, etc.)
 
         // Example: If you want to finish the current activity and go back to the login page
-//        finish();
+        // finish();
         // Or, if you want to start the login activity explicitly
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);

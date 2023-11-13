@@ -25,11 +25,17 @@ import java.util.Date;
 import java.util.Locale;
 
 public class WeatherActivity extends AppCompatActivity {
+
+    // GUI elements
     private Toolbar toolbar;
     private TextView cityNameTextView, dateTimeTextView, temperatureTextView, weatherTextView, humidityTextView, windTextView;
 
 
-    // called when the activity is started to set layout and content
+    /**
+     * Called when the activity is started to set layout and content.
+     *
+     * @param savedInstanceState The saved state of the activity.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +52,7 @@ public class WeatherActivity extends AppCompatActivity {
         humidityTextView = findViewById(R.id.humidity);
         windTextView = findViewById(R.id.wind);
 
-
+        // Retrieve city name from the intent
         String cityName = getIntent().getStringExtra("city").toString();
         String welcome = "Welcome to the " + cityName;
         String cityWeatherInfo = "Detailed information about the weather of " + cityName;
@@ -60,6 +66,7 @@ public class WeatherActivity extends AppCompatActivity {
             }
         });
 
+        // Set welcome messages
         welcomeMessage.setText(welcome);
         cityInfoMessage.setText(cityWeatherInfo);
 
@@ -100,10 +107,10 @@ public class WeatherActivity extends AppCompatActivity {
                             // Update TextViews with weather data
                             cityNameTextView.setText("name: " + name);
                             dateTimeTextView.setText("Time: "+String.valueOf(formattedDateTime));
-                            temperatureTextView.setText("Temperature: " + String.valueOf((int) Math.round(temperature)) + " C");
+                            temperatureTextView.setText("Temperature: " + String.valueOf((int) Math.round(temperature)) + "\u00B0 C");
                             weatherTextView.setText("Weather: "+ weatherDescription);
-                            humidityTextView.setText("Humidity: " + String.valueOf(humidity));
-                            windTextView.setText("Wind speed: " + String.valueOf(windSpeed)+ " Wind deg: " + String.valueOf(degree));
+                            humidityTextView.setText("Humidity: " + String.valueOf(humidity) + "%");
+                            windTextView.setText("Wind speed: " + String.valueOf(windSpeed) + " km/h" + "\n" + "\n" + "\n" +"Wind deg: " + String.valueOf(degree) +  "\u00B0");
 
 
                         } catch (JSONException e) {

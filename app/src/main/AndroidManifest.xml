@@ -2,13 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="edu.uiuc.cs427app">
 
+    <!-- Required Permissions -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
+    <!-- Application Configuration -->
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -16,9 +17,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.MyFirstApp">
+
+        <!-- Google Maps API Key -->
         <meta-data
                 android:name="com.google.android.geo.API_KEY"
                 android:value="AIzaSyBt_Q01vX0SxrkN_cVoGnxjlP-Y717Z7LY" />
+
+        <!-- Activity Definitions -->
         <activity
                 android:name=".WeatherActivity"
                 android:exported="false"/>
@@ -26,11 +31,15 @@
                 android:name=".MapActivity"
                 android:exported="false"/>
 
+
+        <!-- Content Provider -->
         <provider
                 android:name=".UserContentProvider"
                 android:authorities="edu.uiuc.cs427app.provider"
                 android:exported="false"/>
 
+
+        <!-- Activity Definitions -->
         <activity
                 android:name=".RegisterActivity"
                 android:exported="false"/>

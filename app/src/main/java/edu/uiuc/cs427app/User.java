@@ -7,19 +7,31 @@ import java.util.List;
 User class that will be used to store: username, password, favoredCities and theme.
  */
 public class User {
-
+    // User attributes
     String username;
     String password;
     List<String> favoredCities = Arrays.asList("LA", "Dallas");
     String theme = "default";
 
-    // constructor with username and password
+    /**
+     * Constructor with username and password.
+     *
+     * @param username The username of the user.
+     * @param password The password associated with the username.
+     */
     public User(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-    // constructor with username, password, cities, and theme
+    /**
+     * Constructor with username, password, favored cities, and theme.
+     *
+     * @param username      The username of the user.
+     * @param password      The password associated with the username.
+     * @param favoredCities The list of favored cities.
+     * @param theme         The theme preference of the user.
+     */
     public User(String username, String password, List<String> favoredCities, String theme) {
         this.username = username;
         this.password = password;
@@ -36,7 +48,11 @@ public class User {
     public User() {
     }
 
-    // overload to string method
+    /**
+     * Override of the toString method for debugging and logging purposes.
+     *
+     * @return A string representation of the User object.
+     */
     @Override
     public String toString() {
         return "User{" +

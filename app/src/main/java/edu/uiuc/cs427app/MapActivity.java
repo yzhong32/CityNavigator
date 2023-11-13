@@ -37,6 +37,15 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
     private static final float ZOOM_LEVEL = 10.0f;
 
+    /**
+     * onCreate
+     *
+     * Called when the activity is first created. It initializes the layout, obtains the city
+     * name from the Intent, constructs the initial GUI elements, and calls the function to fetch
+     * latitude and longitude coordinates for the city.
+     *
+     * @param savedInstanceState The saved state of the activity.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +80,14 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         // Call the function to fetch latitude and longitude for the city name
         fetchCoordinatesAndUpdateMap(cityName);
     }
-
+    /**
+     * fetchCoordinatesAndUpdateMap
+     *
+     * Fetches the latitude and longitude coordinates for the given city using the Google Geocoding API.
+     * It then updates the map with the obtained coordinates.
+     *
+     * @param cityName The name of the city for which coordinates are to be fetched.
+     */
     private void fetchCoordinatesAndUpdateMap(String cityName) {
         String apiUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=" + cityName + "&key=" + GEOCODING_API_KEY;
         Log.d("Url: ", apiUrl);
@@ -106,7 +122,15 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(request);
     }
-
+    /**
+     * updateUI
+     *
+     * Updates the map UI with the given latitude and longitude coordinates. It adds a marker
+     * at the specified location and moves the camera to focus on that location.
+     *
+     * @param latitude The latitude coordinate.
+     * @param longitude The longitude coordinate.
+     */
     private void updateUI(double latitude, double longitude) {
         if (mMap != null) {
             // Add a marker at the given latitude and longitude
@@ -122,6 +146,13 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         }
     }
 
+    /**
+     * onMapReady
+     *
+     * Callback method triggered when the map is ready to be used. It initializes the GoogleMap object.
+     *
+     * @param googleMap The GoogleMap object representing the map.
+     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;

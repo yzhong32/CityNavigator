@@ -14,10 +14,12 @@ import androidx.annotation.Nullable;
 
 public class UserContentProvider extends ContentProvider {
 
+    // Content provider constants
     private static final String AUTHORITY = "edu.uiuc.cs427app.provider";
     public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/users");
     private SQLiteOpenHelper dbHelper;
 
+    // URI matcher constants
     private static final int USERS = 100;
     private static final int USER_ID = 101;
 
@@ -32,14 +34,27 @@ public class UserContentProvider extends ContentProvider {
     }
 
 
-    // initializes the content provider activity
+    /**
+     * Initializes the content provider activity.
+     *
+     * @return True upon successful initialization.
+     */
     @Override
     public boolean onCreate() {
         dbHelper = new UserDbHelper(getContext());
         return true;
     }
 
-    // query data from the db
+    /**
+     * Queries data from the database.
+     *
+     * @param uri           The content URI to query.
+     * @param projection    The list of columns to include in the query.
+     * @param selection     The selection criteria.
+     * @param selectionArgs The selection arguments.
+     * @param sortOrder     The sort order.
+     * @return A Cursor containing the result of the query.
+     */
     @Nullable
     @Override
     public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
@@ -49,7 +64,13 @@ public class UserContentProvider extends ContentProvider {
         return cursor;
     }
 
-    // insert data in to db
+    /**
+     * Inserts data into the database.
+     *
+     * @param uri    The content URI to insert data into.
+     * @param values The ContentValues containing the data to insert.
+     * @return
+     */
     @Nullable
     @Override
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
@@ -67,7 +88,15 @@ public class UserContentProvider extends ContentProvider {
         }
     }
 
-    // update data in db
+    /**
+     * Updates data in the database.
+     *
+     * @param uri           The content URI to update data in.
+     * @param values        The ContentValues containing the data to update.
+     * @param selection     The selection criteria.
+     * @param selectionArgs The selection arguments.
+     * @return The number of rows updated.
+     */
     @Override
     public int update(@NonNull Uri uri, @Nullable ContentValues values, @Nullable String selection, @Nullable String[] selectionArgs) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -78,7 +107,14 @@ public class UserContentProvider extends ContentProvider {
         return rowsUpdated;
     }
 
-    // delete data in db
+    /**
+     * Deletes data from the database.
+     *
+     * @param uri           The content URI to delete data from.
+     * @param selection     The selection criteria.
+     * @param selectionArgs The selection arguments.
+     * @return The number of rows deleted.
+     */
     @Override
     public int delete(@NonNull Uri uri, @Nullable String selection, @Nullable String[] selectionArgs) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -89,13 +125,17 @@ public class UserContentProvider extends ContentProvider {
         return rowsDeleted;
     }
 
-    // get content type
+    /**
+     * Returns the MIME type of the data at the given URI.
+     *
+     * @param uri The content URI.
+     * @return The MIME type.
+     */
     @Nullable
     @Override
     public String getType(@NonNull Uri uri) {
         return null;
     }
 
-    // ... (other methods and member variables)
 }
 

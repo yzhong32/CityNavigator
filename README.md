@@ -166,20 +166,20 @@ Meeting notes: We discussed our progress (50% of m4 implemented), discussed rema
 
 <b>Week 8</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: Brogdon3, yl159, yzhong32, hend, srt6, brianib2, sbecerr2, apabba2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We discussed how to implement milestone 5 and split out tasks for specific tests for everyone to work on
 </br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| NetID          | Progress from last week         | Tasks for next week                                     |
+| ---------------| --------------------------------| --------------------------------------------------------|
+| Brogdon3       | Meeting notes, reviewed m5      |  Assigned instrumentation test                          |
+| yl159          | Milestone 4 Completed           |  Assigned instrumentation test                          |
+| yzhong32       | Milestone 4 Completed           |  Assigned instrumentation test                          |
+| hend           | Milestone 4 Completed           |  Assigned instrumentation test                          |
+| brianib2       | Milestone 4 Completed           |  Assigned instrumentation test                          |
+| srt6           | Milestone 4 Completed           |  Assigned instrumentation test                          |
+| sbecerr2       | Milestone 4 Completed           |  Assigned instrumentation test                          |
+| apabba2        | Milestone 4 Completed           |  Assigned instrumentation test                          |
 </br>
 
 

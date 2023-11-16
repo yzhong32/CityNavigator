@@ -3,9 +3,12 @@ plugins {
     id 'jacoco' // Apply Jacoco plugin
 }
 
+jacoco {
+    toolVersion = "0.8.11"
+}
+
 android {
     compileSdk 32
-
     defaultConfig {
         applicationId "edu.uiuc.cs427app"
         minSdk 29
@@ -14,7 +17,24 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testOptions {
+        unitTests.all {
+            jacoco {
+                includeNoLocationClasses = true
+            }
+        }
+        sourceSets {
+        main {
+            java.srcDirs = ['src/main/java']
+        }
+        test {
+            java.srcDirs = ['src/androidTest/java']
+        }
     }
+    }
+    }
+
+    
 
     buildTypes {
 //        debug {
@@ -34,6 +54,22 @@ android {
         viewBinding true
     }
 }
+
+task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest']) {
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+    def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*']
+    def debugTree = fileTree(dir: "${buildDir}/intermediates/classes/debug", excludes: fileFilter)
+    def mainSrc = "${project.projectDir}/src/main/java"
+    sourceDirectories.from = files([mainSrc])
+    classDirectories.from = files([debugTree])
+    executionData.from = fileTree(dir: "$buildDir", includes: [
+        "jacoco/testDebugUnitTest.exec", "outputs/code-coverage/connected/*coverage.ec"
+    ])
+}
+
 
 dependencies {
 

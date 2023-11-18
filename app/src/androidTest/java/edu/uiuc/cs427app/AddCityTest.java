@@ -19,6 +19,7 @@ import androidx.test.platform.app.InstrumentationRegistry;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.matcher.ViewMatchers.isAssignableFrom;
 import static androidx.test.espresso.action.ViewActions.typeText;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.espresso.action.ViewActions.click;
 
@@ -69,29 +70,27 @@ public class AddCityTest {
         editor.apply(); // Use apply() instead of commit()
     }
     @Test
-    public void testAddCity(){
-        String cityNameToAdd = "San Diego"; // Replace with the city name you want to find
-
-        // It then locates a button (buttonAddLocation) and a title to “Add a New City”
-//        ViewInteraction addLocationButton = Espresso.onView(
-//                Matchers.allOf(
-//                        ViewMatchers.withText("Add a New City")
-//                )
-//        );
+    public void testAddCity() throws InterruptedException {
+        String cityNameToAdd = "Nashville"; // Replace with the city name you want to find
 
         // click on the button to add a new city
-        onView(withText("Add a New City")).perform(click());
+        onView(withId(R.id.buttonAddLocation)).perform(click());
         Log.d("AddCityTest", "Clicked on Add Location Button");
 //        addLocationButton.perform(ViewActions.click());
 
         onView(isAssignableFrom(EditText.class)).perform(typeText(cityNameToAdd));
-        Log.d("AddCityTest", "Typed a City");
+        Log.d("AddCityTest", "Typed a City: " + cityNameToAdd);
         // click add
         onView(withText("Add")).perform(click());
         Log.d("AddCityTest", "Clicked on Add");
 
+        // WAIT
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
-        // test the assertion: new city should be in TEST_FAVOR_CITIES
         // retrieve updated list of favorite cities
         Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
         SharedPreferences sharedPreferences = context.getSharedPreferences("user", Context.MODE_PRIVATE);
@@ -99,7 +98,9 @@ public class AddCityTest {
         List<String> favoriteCitiesList = new ArrayList<>(favoriteCitiesSet);
 
         // Assert that the updated list contains the new city
+        Log.d("AddCityTest", "favoriteCitiesList: " + favoriteCitiesList);
         assert favoriteCitiesList.contains(cityNameToAdd);
+
 
 
     }

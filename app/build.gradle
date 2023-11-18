@@ -27,7 +27,7 @@ android {
         main {
             java.srcDirs = ['src/main/java']
         }
-        test {
+        androidTest {
             java.srcDirs = ['src/androidTest/java']
         }
     }

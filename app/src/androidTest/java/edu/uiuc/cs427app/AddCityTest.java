@@ -59,7 +59,7 @@ public class AddCityTest {
     @Before
     public void setUp() {
         // Clear SharedPreferences before each test to ensure a clean state
-        Context context = InstrumentationRegistry.getInstrumentation().getContext();
+        Context context = InstrumentationRegistry.getInstrumentation().getTargetContext();
         SharedPreferences sharedPreferences = context.getSharedPreferences("user", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear();
@@ -67,7 +67,7 @@ public class AddCityTest {
         editor.putString("password", TEST_PASSWORD);
         editor.putStringSet("cities", new HashSet<>(TEST_FAVOR_CITIES));
         editor.putString("theme", TEST_THEME);
-        editor.apply(); // Use apply() instead of commit()
+        editor.apply();
     }
     @Test
     public void testAddCity() throws InterruptedException {
@@ -86,7 +86,7 @@ public class AddCityTest {
 
         // WAIT
         try {
-            Thread.sleep(5000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -99,6 +99,7 @@ public class AddCityTest {
 
         // Assert that the updated list contains the new city
         Log.d("AddCityTest", "favoriteCitiesList: " + favoriteCitiesList);
+        Log.d("AddCityTest", "Checking if " + cityNameToAdd + " is in " + favoriteCitiesList);
         assert favoriteCitiesList.contains(cityNameToAdd);
 
 

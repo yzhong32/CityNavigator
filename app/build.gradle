@@ -29,6 +29,7 @@ android {
             androidTest {
                 java.srcDirs = ['src/androidTest/java']
             }
+
         }
     }
 

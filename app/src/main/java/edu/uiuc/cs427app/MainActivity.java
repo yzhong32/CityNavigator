@@ -134,16 +134,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Set up the buttons
         builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
+
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 String newCity = input.getText().toString().trim();
+                Log.d("AddCityTest", "Add button successfully clicked!");
+                Log.d("AddCityTest", "City Parsed: " + newCity);
                 if (!newCity.isEmpty()) {
                     // Add the new city to the list
                     citiesList.add(newCity);
+                    Log.d("AddCityTest", "City Added: " + newCity);
+                    Log.d("AddCityTest", "Cities lsit is now: " + citiesList);
                     // Dynamically create a button for the new city
                     addButtonForCity(newCity);
                     // TODO: save user city selection
                     updateCitiesListInContentProvider(username, citiesList);
+
+                    SharedPreferences updatedPrefs = getSharedPreferences("user", MODE_PRIVATE);
+                    Set<String> updatedCitiesSet = updatedPrefs.getStringSet("cities", new HashSet<>());
+                    Log.d("MainActivity", "Cities list after addition: " + new ArrayList<>(updatedCitiesSet));
+
                 }
             }
         });
@@ -164,28 +174,58 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * @param updatedCitiesList The updated list of favored cities.
      */
     private void updateCitiesListInContentProvider(String username, List<String> updatedCitiesList) {
-        // Define the URI for the user whose cities list needs to be updated
         Uri uri = Uri.parse("content://edu.uiuc.cs427app.provider/users");
-
-        // Create ContentValues to store the updated cities list
         ContentValues values = new ContentValues();
-        values.put(UserContract.COLUMN_FAVORED_CITIES, TextUtils.join(",", updatedCitiesList));
+        String citiesAsString = TextUtils.join(",", updatedCitiesList);
+        values.put(UserContract.COLUMN_FAVORED_CITIES, citiesAsString);
 
-        // Define the selection (where clause) to identify the user by username
+        Log.d("MainActivity", "Updating cities list for user: " + username + " with cities: " + citiesAsString);
+
+        // First try to update the existing user
         String selection = UserContract.COLUMN_USERNAME + " = ?";
         String[] selectionArgs = {username};
-
-        // Perform the update operation using the content provider
         int rowsUpdated = getContentResolver().update(uri, values, selection, selectionArgs);
 
-        if (rowsUpdated > 0) {
-            // Update successful, show a success message (e.g., via Toast)
-            Toast.makeText(this, "Cities list updated successfully", Toast.LENGTH_SHORT).show();
-        } else {
-            // Update failed, show an error message (e.g., via Toast)
-            Toast.makeText(this, "Failed to update cities list", Toast.LENGTH_SHORT).show();
+        Log.d("MainActivity", "Rows updated: " + rowsUpdated);
+
+        if (rowsUpdated == 0) {
+            // No user found, insert a new one
+            values.put(UserContract.COLUMN_USERNAME, username);
+            Uri newUserUri = getContentResolver().insert(uri, values);
+
+            if (newUserUri != null) {
+                Log.d("MainActivity", "New user created with URI: " + newUserUri);
+                Toast.makeText(this, "New user created with cities list", Toast.LENGTH_SHORT).show();
+            } else {
+                Log.e("MainActivity", "Failed to create new user");
+                Toast.makeText(this, "Failed to create new user", Toast.LENGTH_SHORT).show();
+            }
         }
+        else if (rowsUpdated > 0) {
+            // do stuff
+            Log.d("MainActivity", "Cities list updated successfully for user: " + username);
+            Toast.makeText(this, "Cities list updated successfully", Toast.LENGTH_SHORT).show();
+
+            // Update SharedPreferences with the new list
+            SharedPreferences sharedPreferences = getSharedPreferences("user", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putStringSet("cities", new HashSet<>(updatedCitiesList));
+            editor.apply(); // Use apply() for asynchronous save
+
+            Log.d("MainActivity", "SharedPreferences updated with cities list: " + updatedCitiesList);
+        }
+        else {
+            Log.d("MainActivity", "Cities list updated successfully for user: " + username);
+            Toast.makeText(this, "Cities list updated successfully", Toast.LENGTH_SHORT).show();
+        }
+
+        // Fetch and log the updated SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("user", MODE_PRIVATE);
+        Set<String> updatedCitiesSet = sharedPreferences.getStringSet("cities", new HashSet<>());
+        Log.d("MainActivity", "SharedPreferences cities list after update: " + updatedCitiesSet);
     }
+
+
 
     /**
      * Adds a button and UI elements for a city dynamically.
@@ -261,6 +301,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Implement this as per your requirements
                 removeCity(city);
                 updateCitiesListInContentProvider(username, citiesList);
+
+                SharedPreferences updatedPrefs = getSharedPreferences("user", MODE_PRIVATE);
+                Set<String> updatedCitiesSet = updatedPrefs.getStringSet("cities", new HashSet<>());
+                Log.d("MainActivity", "Cities list after removal: " + new ArrayList<>(updatedCitiesSet));
             }
         });
         cityLayout.addView(removeCityButton);

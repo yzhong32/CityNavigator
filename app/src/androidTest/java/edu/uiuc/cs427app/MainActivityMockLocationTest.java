@@ -83,7 +83,6 @@ public class MainActivityMockLocationTest {
         // Here, we'll mock the showMap method in the MainActivity
 //
         // Mock the location to Champaign
-        // TODO: this line is actually not happening
         mActivityRule.getScenario().onActivity(mainActivity -> {
             Log.d("MockLocationTest", "Inside onActivity");
             MainActivity spyMainActivity = Mockito.spy(mainActivity);

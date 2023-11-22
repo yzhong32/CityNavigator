@@ -40,7 +40,7 @@ public class RemoveCityTest {
             new ActivityScenarioRule<>(LoginActivity.class);
 
     @Test
-    public void remove() {
+    public void testRemoveAnExistingCity() {
         ViewInteraction materialTextView = onView(
                 allOf(withId(R.id.register), withText("Register"),
                         childAtPosition(

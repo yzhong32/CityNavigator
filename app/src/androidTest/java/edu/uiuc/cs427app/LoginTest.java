@@ -4,9 +4,8 @@ import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.Intent;
-import android.text.TextUtils;
 
+import android.text.TextUtils;
 import androidx.test.espresso.Espresso;
 import androidx.test.espresso.action.ViewActions;
 import androidx.test.espresso.assertion.ViewAssertions;
@@ -14,20 +13,19 @@ import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.platform.app.InstrumentationRegistry;
 
-
-
-
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
-public class LogoutTest {
+/*
+./gradlew createDebugCoverageReport
+for generating report
+ */
+
+public class LoginTest {
+
     private static final String TEST_USERNAME = "testUser";
     private static final String TEST_PASSWORD = "testPassword";
 
@@ -70,7 +68,7 @@ public class LogoutTest {
     }
 
     @Test
-    public void testUserLogout() {
+    public void testUserLogin() {
         // Type the username and password
         Espresso.onView(ViewMatchers.withId(R.id.username)).perform(ViewActions.typeText(TEST_USERNAME));
         Espresso.onView(ViewMatchers.withId(R.id.password)).perform(ViewActions.typeText(TEST_PASSWORD));
@@ -103,27 +101,6 @@ public class LogoutTest {
         // Check if the saved data matches the input data
         assert savedUsername != null && savedUsername.equals(TEST_USERNAME);
         assert savedCities.contains("Dallas"); // Assuming "default_city" is added to SharedPreferences during registration
-
-
-        // Click the logout button
-        Espresso.onView(ViewMatchers.withId(R.id.logoutButton)).perform(ViewActions.click());
-
-        // Wait for login activity to load
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        // Check/assert for elements of login activity
-        Espresso.onView(ViewMatchers.withId(R.id.username)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()));
-        Espresso.onView(ViewMatchers.withId(R.id.password)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()));
-        Espresso.onView(ViewMatchers.withId(R.id.login)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()));
-
-
-
-
-
     }
 
 

@@ -15,12 +15,9 @@ import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
-public class SignupActivityTest {
+public class SignupTest {
 
     private static final String LETTERS = "abcdefghijklmnopqrstuvwxyz";
     private static final String NUMBERS = "0123456789";
@@ -41,7 +38,7 @@ public class SignupActivityTest {
     public ActivityScenarioRule<RegisterActivity> activityRule = new ActivityScenarioRule<>(RegisterActivity.class);
 
     @Test
-    public void testUserSignup() {
+    public void testUserSignUp() {
         String TEST_USERNAME = generateRandomString(15);
         String TEST_PASSWORD = generateRandomString(15);
 

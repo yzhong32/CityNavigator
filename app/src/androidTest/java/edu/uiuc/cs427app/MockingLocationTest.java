@@ -1,10 +1,10 @@
 package edu.uiuc.cs427app;
-import android.content.ContentResolver;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewParent;
 import androidx.test.espresso.Espresso;
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.espresso.action.ViewActions;
@@ -15,13 +15,15 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 
 import androidx.test.platform.app.InstrumentationRegistry;
+import org.hamcrest.Description;
+import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
+import org.hamcrest.TypeSafeMatcher;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
@@ -30,9 +32,22 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.action.ViewActions.*;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.*;
+import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.is;
+import static org.mockito.Mockito.reset;
+
+/**
+ * In this test, we start with click on Weather button for Dallas, and then after showing weather for Dallas,
+ * We mock to show Houston data, and confirm data is there.
+ *
+ */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class MainActivityMockLocationTest {
+public class MockingLocationTest {
 
     private static final String TEST_USERNAME = "testUser";
     private static final String TEST_PASSWORD = "testPassword";
@@ -61,11 +76,53 @@ public class MainActivityMockLocationTest {
         editor.putStringSet("cities", new HashSet<>(TEST_FAVOR_CITIES));
         editor.putString("theme", TEST_THEME);
         editor.apply(); // Use apply() instead of commit()
+
     }
 
 
     @Test
     public void testMockLocation() throws InterruptedException {
+        ViewInteraction materialButton2 = onView(
+                allOf(withId(R.id.buttonAddLocation), withText("Add a location"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.LinearLayout")),
+                                        0),
+                                4),
+                        isDisplayed()));
+        materialButton2.perform(click());
+
+        ViewInteraction editText = onView(
+                allOf(childAtPosition(
+                                allOf(withId(android.R.id.custom),
+                                        childAtPosition(
+                                                withClassName(is("android.widget.FrameLayout")),
+                                                0)),
+                                0),
+                        isDisplayed()));
+
+        // Adding City 1 - New York
+        editText.perform(replaceText("Dallas"), closeSoftKeyboard());
+
+        ViewInteraction materialButton3 = onView(
+                allOf(withId(android.R.id.button1), withText("Add"),
+                        childAtPosition(
+                                childAtPosition(
+                                        withClassName(is("android.widget.ScrollView")),
+                                        0),
+                                3)));
+        materialButton3.perform(scrollTo(), click());
+
+
+        ViewInteraction textView = onView(
+                allOf(withText("Dallas"),
+                        withParent(withParent(withId(R.id.cityButtonLayout))),
+                        isDisplayed()));
+
+        //Assertion check to check added city name
+        textView.check(matches(withText("Dallas")));
+
+
         // Click on the "Map" button for Chicago
         String cityNameToFind = "Dallas"; // Replace with the city name you want to find
         ViewInteraction chicagoMapButton = Espresso.onView(
@@ -96,5 +153,24 @@ public class MainActivityMockLocationTest {
         // Check if the displayed city name matches the mocked location (Champaign)
         ViewInteraction houstonCityNameTextView = Espresso.onView(ViewMatchers.withId(R.id.cityName));
         houstonCityNameTextView.check(ViewAssertions.matches(ViewMatchers.withText("name: Houston")));
+    }
+
+    private static Matcher<View> childAtPosition(
+            final Matcher<View> parentMatcher, final int position) {
+
+        return new TypeSafeMatcher<View>() {
+            @Override
+            public void describeTo(Description description) {
+                description.appendText("Child at position " + position + " in parent ");
+                parentMatcher.describeTo(description);
+            }
+
+            @Override
+            public boolean matchesSafely(View view) {
+                ViewParent parent = view.getParent();
+                return parent instanceof ViewGroup && parentMatcher.matches(parent)
+                        && view.equals(((ViewGroup) parent).getChildAt(position));
+            }
+        };
     }
 }

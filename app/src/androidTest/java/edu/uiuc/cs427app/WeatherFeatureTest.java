@@ -68,7 +68,7 @@ public class WeatherFeatureTest {
     }
 
     @Test
-    public void testWeatherDataFor2Cities() {
+    public void testWeatherFeatureFor2Cities() {
 
         // test for first city, which is Dallas
         testWeatherDataForNthCity(0);

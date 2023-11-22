@@ -1,18 +1,10 @@
 package edu.uiuc.cs427app;
 
-import android.content.ContentResolver;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
 import android.util.Log;
 import android.widget.EditText;
 
-import androidx.test.espresso.Espresso;
-import androidx.test.espresso.ViewInteraction;
-import androidx.test.espresso.action.ViewActions;
-import androidx.test.espresso.assertion.ViewAssertions;
-import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.platform.app.InstrumentationRegistry;
 
@@ -23,7 +15,6 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static androidx.test.espresso.action.ViewActions.click;
 
-import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -39,7 +30,7 @@ import java.util.Set;
 for generating report
  */
 
-public class AddCityTest {
+public class AddANewCityTest {
     // constants
     private static final String TEST_USERNAME = "testUser";
     private static final String TEST_PASSWORD = "testPassword";
@@ -70,7 +61,7 @@ public class AddCityTest {
         editor.apply();
     }
     @Test
-    public void testAddCity() throws InterruptedException {
+    public void testAddANewCity() throws InterruptedException {
         String cityNameToAdd = "Nashville"; // Replace with the city name you want to find
 
         // click on the button to add a new city

@@ -1,9 +1,6 @@
 package edu.uiuc.cs427app;
-import android.content.ContentResolver;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
 import android.util.Log;
 import androidx.test.espresso.Espresso;
 import androidx.test.espresso.ViewInteraction;
@@ -21,7 +18,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
@@ -30,9 +26,14 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
+/**
+ * In this test, we start with click on Weather button for Dallas, and then after showing weather for Dallas,
+ * We mock to show Houston data, and confirm data is there.
+ *
+ */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
-public class MainActivityMockLocationTest {
+public class MockingLocationTest {
 
     private static final String TEST_USERNAME = "testUser";
     private static final String TEST_PASSWORD = "testPassword";
@@ -85,8 +86,8 @@ public class MainActivityMockLocationTest {
         // Mock the location to Champaign
         mActivityRule.getScenario().onActivity(mainActivity -> {
             Log.d("MockLocationTest", "Inside onActivity");
-            MainActivity spyMainActivity = Mockito.spy(mainActivity);
-//            Mockito.doNothing().when(spyMainActivity).showWeather("Houston"); // Mock location to Champaign
+//            MainActivity spyMainActivity = Mockito.spy(mainActivity);
+////            Mockito.doNothing().when(spyMainActivity).showWeather("Houston"); // Mock location to Champaign
             mainActivity.showWeather("Houston"); // Mock location to Houston
             Log.d("MockLocationTest", "Mocked location to Houston");
         });

@@ -35,14 +35,14 @@ import org.junit.runner.RunWith;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class LocationTest {
+public class LocationFeatureTest {
 
     @Rule
     public ActivityScenarioRule<LoginActivity> mActivityScenarioRule =
             new ActivityScenarioRule<>(LoginActivity.class);
 
     @Test
-    public void locationTest() {
+    public void testLocationFeatureFor2Cities() {
         ViewInteraction materialTextView = onView(
                 allOf(withId(R.id.register), withText("Register"),
                         childAtPosition(

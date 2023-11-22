@@ -91,7 +91,7 @@ public class MainActivityMockLocationTest {
             Log.d("MockLocationTest", "Mocked location to Houston");
         });
 
-        Thread.sleep(10000); // Adjust the sleep duration if needed
+        Thread.sleep(5000); // Adjust the sleep duration if needed
 
         // Check if the displayed city name matches the mocked location (Champaign)
         ViewInteraction houstonCityNameTextView = Espresso.onView(ViewMatchers.withId(R.id.cityName));

@@ -2,6 +2,7 @@ package edu.uiuc.cs427app;
 
 
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.replaceText;
@@ -19,6 +20,8 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 
 import androidx.test.espresso.ViewInteraction;
+import androidx.test.espresso.assertion.ViewAssertions;
+import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
@@ -145,6 +148,8 @@ public class RemoveCityTest {
                         withParent(withParent(allOf(withId(R.id.cityButtonLayout),
                                 withParent(IsInstanceOf.<View>instanceOf(android.widget.LinearLayout.class))))),
                         isDisplayed()));
+
+        // assert if New York is on the city list
         textView.check(matches(withText("New York")));
 
         ViewInteraction textView2 = onView(
@@ -173,6 +178,7 @@ public class RemoveCityTest {
                         withParent(withParent(allOf(withId(R.id.cityButtonLayout),
                                 withParent(IsInstanceOf.<View>instanceOf(android.widget.LinearLayout.class))))),
                         isDisplayed()));
+
         textView5.check(matches(withText("Chicago")));
 
         // WAIT
@@ -202,6 +208,18 @@ public class RemoveCityTest {
             throw new RuntimeException(e);
         }
 
+        // Assert that New York is removed
+        onView(ViewMatchers.withText("New York"))
+                .check(ViewAssertions.doesNotExist());
+
+
+        // Assert that "Champaign" is remain on the list
+        onView(withText("Champaign")).check(matches(isDisplayed()));
+
+
+        // Assert that "Champaign" is remain on the list
+        onView(withText("Chicago")).check(matches(isDisplayed()));
+
         ViewInteraction button2 = onView(
                 allOf(withText("Remove"),
                         childAtPosition(
@@ -215,12 +233,22 @@ public class RemoveCityTest {
                         isDisplayed()));
         button2.perform(click());
 
+        // Assert that Chicago is removed
+        onView(ViewMatchers.withText("Chicago"))
+                .check(ViewAssertions.doesNotExist());
+
+
+        // Assert that "Champaign" is remain on the list
+        onView(withText("Champaign")).check(matches(isDisplayed()));
+
         // WAIT
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
+
     }
 
     private static Matcher<View> childAtPosition(

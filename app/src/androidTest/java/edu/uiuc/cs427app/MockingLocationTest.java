@@ -82,6 +82,11 @@ public class MockingLocationTest {
 
     @Test
     public void testMockLocation() throws InterruptedException {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ViewInteraction materialButton2 = onView(
                 allOf(withId(R.id.buttonAddLocation), withText("Add a location"),
                         childAtPosition(

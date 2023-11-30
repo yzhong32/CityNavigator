@@ -39,8 +39,16 @@ public class SignupTest {
 
     @Test
     public void testUserSignUp() {
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         String TEST_USERNAME = generateRandomString(15);
         String TEST_PASSWORD = generateRandomString(15);
+
 
         // click the register button
         Espresso.onView(ViewMatchers.withId(R.id.register)).perform(ViewActions.click());

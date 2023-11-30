@@ -47,6 +47,12 @@ public class LocationFeatureTest {
 
     @Test
     public void testLocationFeatureFor2Cities() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         ViewInteraction materialTextView = onView(
                 allOf(withId(R.id.register), withText("Register"),
                         childAtPosition(
@@ -174,6 +180,12 @@ public class LocationFeatureTest {
         // Assertion check to check map is displayed correctly
         view.check(matches(isDisplayed()));
 
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         ViewInteraction toolbar = onView(
                 allOf(withId(R.id.toolbar),
                         childAtPosition(
@@ -248,6 +260,11 @@ public class LocationFeatureTest {
 
         // Assertion check to check map is displayed correctly
         view2.check(matches(isDisplayed()));
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         ViewInteraction toolbar2 = onView(
                 allOf(withId(R.id.toolbar),

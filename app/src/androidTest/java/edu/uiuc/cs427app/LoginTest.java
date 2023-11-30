@@ -69,6 +69,11 @@ public class LoginTest {
 
     @Test
     public void testUserLogin() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         // Type the username and password
         Espresso.onView(ViewMatchers.withId(R.id.username)).perform(ViewActions.typeText(TEST_USERNAME));
         Espresso.onView(ViewMatchers.withId(R.id.password)).perform(ViewActions.typeText(TEST_PASSWORD));

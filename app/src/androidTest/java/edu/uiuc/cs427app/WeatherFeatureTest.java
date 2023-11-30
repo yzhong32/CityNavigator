@@ -84,7 +84,7 @@ public class WeatherFeatureTest {
 
         // WAIT
         try {
-            Thread.sleep(2000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
@@ -113,6 +113,11 @@ public class WeatherFeatureTest {
                 ViewMatchers.withId(R.id.toolbar)
         );
         backButton.perform(click());
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 

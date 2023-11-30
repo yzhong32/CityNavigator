@@ -62,6 +62,13 @@ public class AddANewCityTest {
     }
     @Test
     public void testAddANewCity() throws InterruptedException {
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         String cityNameToAdd = "Nashville"; // Replace with the city name you want to find
 
         // click on the button to add a new city

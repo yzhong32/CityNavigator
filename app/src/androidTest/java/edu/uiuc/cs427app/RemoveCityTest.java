@@ -44,6 +44,11 @@ public class RemoveCityTest {
 
     @Test
     public void testRemoveAnExistingCity() {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         ViewInteraction materialTextView = onView(
                 allOf(withId(R.id.register), withText("Register"),
                         childAtPosition(

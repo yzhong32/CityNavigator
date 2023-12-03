@@ -185,75 +185,57 @@ Meeting notes: We discussed how to implement milestone 5 and split out tasks for
 
 <b>Week 9</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: Brogdon3, yl159, yzhong32, hend, srt6, brianib2, sbecerr2, apabba2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: Checked in regarding status of milestone 5 and set due dates for next update and next meeting
 </br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| NetID          | Progress from last week         | Tasks for next week                                     |
+| ---------------| --------------------------------| --------------------------------------------------------|
+| Brogdon3       | Meeting notes, started on M5    |  Finish instrumentation test                            |
+| yl159          | started on M5                   |  Finish instrumentation test                            |
+| yzhong32       | started on M5                   |  Finish instrumentation test                            |
+| hend           | started on M5                   |  Finish instrumentation test                            |
+| brianib2       | started on M5                   |  Finish instrumentation test                            |
+| srt6           | started on M5                   |  Finish instrumentation test                            |
+| sbecerr2       | started on M5                   |  Finish instrumentation test                            |
+| apabba2        | started on M5                   |  Finish instrumentation test                            |
 </br>
 
 
 <b>Week 10</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: Thanksgiving break
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: Thanksgiving break
 </br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+N/A
 </br>
 
 
 <b>Week 11</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: Brogdon3, yl159, yzhong32, hend, srt6, brianib2, sbecerr2, apabba2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: Checked in regarding last few blockers on M5 and timeline for regarding video
 </br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| NetID          | Progress from last week         | Tasks for next week                                     |
+| ---------------| --------------------------------| --------------------------------------------------------|
+| Brogdon3       | meeting notes, worked on M5     |  Help finish M5                                         |
+| yl159          | worked on M5                    |  Help finish M5, record video                           |
+| yzhong32       | worked on M5                    |  Help finish M5                                         |
+| hend           | worked on M5                    |  Help finish M5                                         |
+| brianib2       | worked on M5                    |  Help finish M5                                         |
+| srt6           | worked on M5                    |  Help finish M5                                         |
+| sbecerr2       | worked on M5                    |  Help finish M5                                         |
+| apabba2        | worked on M5                    |  Help finish M5                                         |
 </br>
 
 
 <b>Week 12</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: Finals week
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: Finals week
 </br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+N/A
 </br>
